@@ -2,26 +2,64 @@
 
 <style>
 
-body { text-align: center;}
+.gap {
+  height: 30px;
+}
 
 </style>
 
-<html>
+<html lang="en">
+
 <head>
-<script>type="text/javascript" src="gabby.js"></script>
+	<title>Gabbycat Ipsum</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script type="text/javascript" src="gabby.js"></script>
 </head>
 
 <body>
 
-<h1 id="heading">Gabby Cat Ipsum</h1>
+<div class="container-fluid">
 
-<input type="button" onclick="gabbycatIpsum('gabby-div');" value="Gab at me!" id="button">
-<p></p>
+  <h1 class="text-center" id="heading">Gabbycat Ipsum Text Generator</h1>
 
-<div id="gabby-div">
+  <div class="gap"></div>
+  <div class="gap"></div>
+  
+  <form action="">
+    <div class="row">
+      <div class="col-md-1 col-xs-offset-4">
+        <input type="text" class="form-control" placeholder="# of paras" id="num-para">
+        <!--<input type="text" placeholder="min word count" id="min-word" >
+		<input type="text" placeholder="max word count" id="max-word" >-->
+      </div>
+
+      <div class="col-md-1">
+        <input type="button" class="btn btn-block" value="Gab at me!" onclick="gabbycatIpsum('gabby-div');" id="gabbutton">
+      </div>
+
+      <div class="col-md-1">
+        <input type="button" class="btn btn-block" value="Clear" onclick="clearElem('gabby-div');" id="clearbutton">
+      </div>
+
+      <div class="col-md-1">
+        <input type="button" class="btn btn-block" value="Copy text" onclick="copyToClip('gabby-div');" id="copybutton">
+      </div>
+
+      <div class="col-md-1 text-left" id="copystatus">
+      </div>
+    </div>
+  </form>
+  
+  <div class="gap">
+  </div>
+  
+  <div class="row" id="gab">
+    <div class="col-md-6 col-md-offset-3 well" id="gabby-div">
+      Gabbycat text will appear here
+    </div>
+  </div>
 </div>
-<p></p>
-
-<input type="button" onclick="clearGab('gabby-div');" value="Clear" id="button">
 </body>
 </html>
