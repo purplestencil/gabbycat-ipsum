@@ -1,5 +1,5 @@
 //Gabbycat's vocabulary
-var gabbyVocab = ["purr purr purr!", "chase the stick?", "hide under covers.", "big eyes", "tail swish", "snuggle", "cuddle", "sniff", "scratch the carpet", "watch the birds", "mrrraow!", "hiss", "paw your face", "whisker tickles", "where's the laser?", "meow", "shed everywhere", "land on my feet", "make mummy laugh", "sit on daddy's lap", "wash wash whaa-?", "butthole must sparkle", "love my humans", "where's my food?", "bat bat bat", "ignore you", "look away", "staring contest", "knead the blankie", "I fits, I sits!";]
+var gabbyVocab = ["purr purr purr!", "escape grasps", "chew a cable", "kitten face", "cute ears", "camouflage", "ambush", "stealth attack!", "flop!", "belly rubs", "sqirm", "worm", "chase the stick?", "hide under covers.", "big eyes", "tail swish", "snuggle", "cuddle", "sniff", "scratch the carpet", "watch the birds", "mrrraow!", "hiss", "paw your face", "whiskers tickles", "where's the laser?", "meow", "shed everywhere", "land on my feet", "make mummy laugh", "sit on daddy's lap", "wash wash whaa-?", "butthole must sparkle", "love my humans", "where's my food?", "bat bat bat", "ignore you", "look away", "staring contest", "knead the blankie", "if I fits, I sits!"];
 
 function gabbycatIpsum(elemID) {
 
@@ -7,8 +7,8 @@ function gabbycatIpsum(elemID) {
   //I'll have to come back and revisit so that 
   //users can set the number of words exactly
   var minWord = 10; //document.getElementById('min-word').value;
-  var maxWord = 30; //document.getElementById('max-word').value;
-
+  var maxWord = 40; //document.getElementById('max-word').value;
+  
   //set text variables
   var gabbyText = new Array();
   var paraText = "";
@@ -36,7 +36,7 @@ function gabbycatIpsum(elemID) {
     var wordCount = Math.floor(Math.random() * (maxWord - minWord)) + minWord;
     for (var j = 0; j < wordCount; j++) {
       //pick a random phrase from vocab array
-      var newPhrase = gabbyVocab[Math.floor(Math.random() * (gabbyVocab.length - 1))];
+      var newPhrase = gabbyVocab[Math.floor(Math.random() * (gabbyVocab.length))];
       //select last character of current phrase/para
       var lastChar = paraText.substring(paraText.length - 1, paraText.length);
       //check if last char is terminal punctuation
@@ -60,6 +60,8 @@ function gabbycatIpsum(elemID) {
     }
     //add paragraph to generated text
     gabbyCat.innerHTML += gabbyText[i];
+    //reset paraText
+    var paraText = "";
   }
 }
 
